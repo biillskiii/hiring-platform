@@ -4,7 +4,7 @@
 
 ### 🗂️ Job List Page
 - [✅] Menampilkan semua job yang sudah dibuat  
-- [✅] Menampilkan informasi: Title, Department, Status Badge, Salary Range, dan CTA “Manage Job”  
+- [✅] Menampilkan informasi: Title, Department, Status Badge, Salary Range, dan CTA **“Manage Job”**  
 - [✅] Sorting berdasarkan status / nama  
 - [✅] Filtering berdasarkan status (Active / Inactive / Draft)  
 - [✅] Pencarian (keyword search)  
@@ -12,21 +12,17 @@
 - [✅] Status Badge berubah sesuai state (Active / Inactive / Draft)  
 - [✅] Responsive layout sesuai Figma  
 
----
-
 ### 🧾 Create Job Modal / Page
 - [✅] Input data meta job: title, description, department, salary range, dsb  
 - [✅] Konfigurasi **Minimum Profile Information Required** (Full Name, Email, LinkedIn, dll)  
 - [✅] Tiap field bisa diatur ke 3 state:
-  - [✅] Mandatory (required)
-  - [✅] Optional (boleh dikosongin)
-  - [✅] Off (disembunyikan)
+  - Mandatory (required)  
+  - Optional (boleh dikosongin)  
+  - Off (disembunyikan)  
 - [✅] Validasi semua field sebelum submit  
 - [✅] Simpan konfigurasi ke backend (Supabase / Mock JSON)  
 - [✅] State disimpan secara persist / auto-refresh setelah sukses submit  
 - [✅] Notifikasi sukses atau error setelah penyimpanan  
-
----
 
 ### 👥 Candidate Management Page
 - [✅] Menampilkan daftar kandidat per job dalam bentuk tabel  
@@ -49,22 +45,18 @@
 - [✅] Klik card membuka **Job Detail Page**  
 - [✅] Responsive layout  
 
----
-
 ### 📝 Apply Job Page
 - [✅] Form field **dinamis** sesuai konfigurasi backend  
 - [✅] Field state mengikuti config JSON:
-  - [✅] `required: true` → mandatory  
-  - [✅] `required: false` → optional  
-  - [✅] field tidak ada → hidden  
+  - `required: true` → mandatory  
+  - `required: false` → optional  
+  - field tidak ada → hidden  
 - [✅] Validasi otomatis sesuai konfigurasi backend  
 - [✅] Highlight field yang belum diisi saat submit gagal  
-- [✅] Submit lamaran menyimpan data ke backend/mock  
+- [✅] Submit lamaran menyimpan data ke backend / mock  
 - [✅] Menampilkan pesan:
-  - [✅] ✅ Success: “Your application has been submitted successfully.”  
-  - [✅] ❌ Error: tampilkan field wajib yang kosong  
-
----
+  - ✅ Success: “Your application has been submitted successfully.”  
+  - ❌ Error: tampilkan field wajib yang kosong  
 
 ### 📸 Profile Picture via Hand Gesture (optional)
 - [✅] Implementasi **Webcam capture**  
@@ -86,7 +78,7 @@
 - [✅] Reusable UI components (Button, Input, Modal, Table, Dropdown, Chip, Badge)  
 - [✅] State management pakai Zustand / Context API  
 - [✅] Data persistence (LocalStorage / Supabase)  
-- [ ] Deploy ke Vercel  
+- [✅] Deploy ke Vercel  
 
 ---
 
@@ -102,22 +94,45 @@
 
 ---
 
-## 📊 Progress Overview
-| Section | Total Items | Done | Progress |
-|----------|--------------|------|-----------|
-| Admin (Recruiter) | 26 | 0 | ☐ 0% |
-| Applicant (Job Seeker) | 16 | 0 | ☐ 0% |
-| General / System | 10 | 0 | ☐ 0% |
-| Optional Enhancements | 8 | 0 | ☐ 0% |
+## TECH STACK USED
+The project is built using the following technologies:
 
-> Update kolom **Done** & **Progress** manual biar lo bisa tracking progres tiap bagian.
+- **Frontend:** Next.js  
+- **Database:** Supabase (data), Firebase & Firestore (auth)  
+- **Styling:** Tailwind CSS  
+- **Other Tools:** Mediapipe, HeroIcons, TensorFlow  
 
 ---
 
-### 💡 Tips
-- Gunakan ✅ untuk menandai fitur yang udah selesai.  
-- Kalau fitur belum mulai, biarin tetap [ ].  
-- Lo bisa preview langsung progress lo di GitHub dengan centang interaktif.  
-- Misal:
-  ```markdown
-  - [x] Menampilkan semua job yang sudah dibuat ✅
+## HOW TO RUN LOCALLY
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+1. **Clone the repository**
+```bash
+git clone https://github.com/your-username/your-project.git
+cd your-project
+```
+2. **Install Package**
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+3. **Run locally**
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+http://localhost:3000
+```
+## DEPLOY
+
+The project is deployed on Vercel:
+https://hiring-platform1.vercel.app
+
