@@ -3,13 +3,15 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
+import dynamic from "next/dynamic";
 import { auth } from "@/lib/firebaseConfig";
 import { isSignInWithEmailLink, signInWithEmailLink } from "firebase/auth";
 import VerifyImage from "../../../../public/assets/verify.svg";
 import { useUIStore } from "@/app/store/uiStore";
 import Chip from "@/components/ui/chip";
 
-export default function VerifyLogin() {
+// Komponen utama
+function VerifyLoginContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const emailParam = searchParams.get("email");
@@ -91,4 +93,13 @@ export default function VerifyLogin() {
       </div>
     </div>
   );
+}
+
+// Dynamic import untuk men-disable SSR
+const VerifyLogin = dynamic(() => Promise.resolve(VerifyLoginContent), {
+  ssr: false,
+});
+
+export default function Page() {
+  return <VerifyLogin />;
 }

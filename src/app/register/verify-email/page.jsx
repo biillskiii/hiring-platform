@@ -2,12 +2,13 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { useSearchParams, useRouter } from "next/navigation";
-import { auth } from "@/lib/firebaseConfig";
-import { onAuthStateChanged, reload } from "firebase/auth";
+import { useRouter, useSearchParams } from "next/navigation";
+import dynamic from "next/dynamic";
+import { auth } from "@/lib/firebaseConfig"; // hanya import auth
+import { onAuthStateChanged } from "firebase/auth";
 import VerifyImage from "../../../../public/assets/verify.svg";
 
-export default function VerifyEmail() {
+function VerifyEmailContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const email = searchParams.get("email");
@@ -17,10 +18,10 @@ export default function VerifyEmail() {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
       if (user) {
-        await reload(user);
+        await user.reload(); // reload ini method dari user object
         if (user.emailVerified) {
           setIsVerified(true);
-          router.push("/login"); // ⬅️ otomatis pindah ke login
+          setTimeout(() => router.push("/login"), 1500);
         }
       }
     });
@@ -61,4 +62,13 @@ export default function VerifyEmail() {
       </div>
     </div>
   );
+}
+
+// Disable SSR supaya aman dengan useSearchParams
+const VerifyEmail = dynamic(() => Promise.resolve(VerifyEmailContent), {
+  ssr: false,
+});
+
+export default function Page() {
+  return <VerifyEmail />;
 }
