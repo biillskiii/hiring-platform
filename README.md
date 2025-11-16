@@ -109,6 +109,7 @@ The project is built using the following technologies:
 - **Frontend:** [Next.js]
 - **Database:** [Supabase (data), Firebase & Firestore (auth)]
 - **Styling:** [Tailwind CSS]
+- **Other Tools** [Mediapipe, HeroIconDev Tensorflow]
 
 ---
 
