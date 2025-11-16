@@ -4,7 +4,6 @@ import React, { useState, useEffect } from "react";
 import TextInput from "@/components/ui/input";
 import Dropdown from "@/components/ui/dropdown";
 import DatePicker from "@/components/ui/datepicker";
-import jobData from "@/data/job-list.json";
 import RadioButton from "@/components/ui/radio-button";
 import PhoneNumberInput from "@/components/ui/input-number";
 import GestureCaptureModal from "@/components/candidate/profile-capture";
