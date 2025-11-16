@@ -1,3 +1,5 @@
+## PROJECT OVERVIEW
+
 # 🧩 Hiring Management Web App – Feature Checklist
 
 ## 👩‍💼 Admin (Recruiter)
@@ -86,7 +88,7 @@
 - [✅] Reusable UI components (Button, Input, Modal, Table, Dropdown, Chip, Badge)  
 - [✅] State management pakai Zustand / Context API  
 - [✅] Data persistence (LocalStorage / Supabase)  
-- [ ] Deploy ke Vercel  
+- [✅] Deploy ke Vercel  
 
 ---
 
@@ -100,24 +102,49 @@
 - [✅] Pagination dengan infinite scroll mode  
 - [✅] Error fallback page  
 
----
+--
+## TECH STACK USED
+The project is built using the following technologies:
 
-## 📊 Progress Overview
-| Section | Total Items | Done | Progress |
-|----------|--------------|------|-----------|
-| Admin (Recruiter) | 26 | 0 | ☐ 0% |
-| Applicant (Job Seeker) | 16 | 0 | ☐ 0% |
-| General / System | 10 | 0 | ☐ 0% |
-| Optional Enhancements | 8 | 0 | ☐ 0% |
-
-> Update kolom **Done** & **Progress** manual biar lo bisa tracking progres tiap bagian.
+- **Frontend:** [Next.js]
+- **Database:** [Supabase (data), Firebase & Firestore (auth)]
+- **Styling:** [Tailwind CSS]
 
 ---
 
-### 💡 Tips
-- Gunakan ✅ untuk menandai fitur yang udah selesai.  
-- Kalau fitur belum mulai, biarin tetap [ ].  
-- Lo bisa preview langsung progress lo di GitHub dengan centang interaktif.  
-- Misal:
-  ```markdown
-  - [x] Menampilkan semua job yang sudah dibuat ✅
+## HOW TO RUN LOCALLY
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+## Getting Started
+
+First, run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+https://hiring-platform1.vercel.app
+
