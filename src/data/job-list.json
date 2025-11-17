@@ -1,0 +1,314 @@
+{
+  "job_list": {
+    "data": [
+      {
+        "id": "job_20251001_0001",
+        "slug": "frontend-developer",
+        "title": "Frontend Developer",
+        "status": "active",
+        "salary_range": {
+          "min": 7000000,
+          "max": 8000000,
+          "currency": "IDR",
+          "display_text": "Rp7.000.000 - Rp8.000.000"
+        },
+        "list_card": {
+          "badge": "Active",
+          "started_on_text": "Started on 1 Oct 2025",
+          "cta": "Manage Job"
+        }
+      },
+      {
+        "id": "job_20251001_0002",
+        "slug": "backend-engineer",
+        "title": "Backend Engineer",
+        "status": "active",
+        "salary_range": {
+          "min": 9000000,
+          "max": 11000000,
+          "currency": "IDR",
+          "display_text": "Rp9.000.000 - Rp11.000.000"
+        },
+        "list_card": {
+          "badge": "Active",
+          "started_on_text": "Started on 5 Oct 2025",
+          "cta": "Manage Job"
+        }
+      },
+      {
+        "id": "job_20251001_0003",
+        "slug": "ui-ux-designer",
+        "title": "UI/UX Designer",
+        "status": "inactive",
+        "salary_range": {
+          "min": 6000000,
+          "max": 7500000,
+          "currency": "IDR",
+          "display_text": "Rp6.000.000 - Rp7.500.000"
+        },
+        "list_card": {
+          "badge": "Closed",
+          "started_on_text": "Started on 10 Sep 2025",
+          "cta": "View Job"
+        }
+      }
+    ]
+  },
+  "candidate_list": {
+    "data": [
+      {
+        "id": "job_20251001_0001",
+        "attributes": [
+          {
+            "key": "full_name",
+            "label": "Full Name",
+            "value": "Nadia Putri",
+            "order": 1
+          },
+          {
+            "key": "email",
+            "label": "Email",
+            "value": "nadia.putri@example.com",
+            "order": 2
+          },
+          {
+            "key": "phone",
+            "label": "Phone",
+            "value": "+62 812-1234-5678",
+            "order": 3
+          },
+          {
+            "key": "domicile",
+            "label": "Domicile",
+            "value": "Jakarta",
+            "order": 4
+          },
+          { "key": "gender", "label": "Gender", "value": "Female", "order": 5 },
+          {
+            "key": "linkedin_link",
+            "label": "LinkedIn",
+            "value": "https://linkedin.com/in/nadiaputri",
+            "order": 6
+          }
+        ]
+      }
+    ]
+  },
+  "job_detail": {
+    "data": [
+      {
+        "id": "job_20251001_0001",
+        "slug": "ux-designer",
+        "title": "UX Designer",
+        "company": "Rakamin",
+        "company_logo": "/assets/rakamin.png",
+        "location": "Jakarta Selatan",
+        "type": "Full-Time",
+        "salary_range": {
+          "min": 7000000,
+          "max": 15000000,
+          "currency": "IDR",
+          "display_text": "Rp7.000.000 - Rp15.000.000"
+        },
+        "job_details": [
+          {
+            "key": "description",
+            "title": "Deskripsi Pekerjaan",
+            "items": [
+              "Develop, test, and maintain responsive, high-performance web applications using modern front-end technologies.",
+              "Collaborate with UI/UX designers to translate wireframes and prototypes into functional code.",
+              "Integrate front-end components with APIs and backend services.",
+              "Ensure cross-browser compatibility and optimize applications for maximum speed and scalability.",
+              "Write clean, reusable, and maintainable code following best practices and coding standards.",
+              "Participate in code reviews, contributing to continuous improvement and knowledge sharing.",
+              "Troubleshoot and debug issues to improve usability and overall application quality.",
+              "Stay updated with emerging front-end technologies and propose innovative solutions.",
+              "Collaborate in Agile/Scrum ceremonies, contributing to sprint planning, estimation, and retrospectives."
+            ]
+          }
+        ],
+        "cta": "Apply"
+      },
+      {
+        "id": "job_20251001_0002",
+        "slug": "ux-designer",
+        "title": "UX Designer",
+        "company": "Rakamin",
+        "company_logo": "/assets/rakamin.png",
+        "location": "Jakarta Selatan",
+        "type": "Full-Time",
+        "salary_range": {
+          "min": 7000000,
+          "max": 15000000,
+          "currency": "IDR",
+          "display_text": "Rp7.000.000 - Rp15.000.000"
+        },
+        "job_details": [
+          {
+            "key": "description",
+            "title": "Deskripsi Pekerjaan",
+            "items": [
+              "Develop, test, and maintain responsive, high-performance web applications using modern front-end technologies.",
+              "Collaborate with UI/UX designers to translate wireframes and prototypes into functional code.",
+              "Integrate front-end components with APIs and backend services.",
+              "Ensure cross-browser compatibility and optimize applications for maximum speed and scalability.",
+              "Write clean, reusable, and maintainable code following best practices and coding standards.",
+              "Participate in code reviews, contributing to continuous improvement and knowledge sharing.",
+              "Troubleshoot and debug issues to improve usability and overall application quality.",
+              "Stay updated with emerging front-end technologies and propose innovative solutions.",
+              "Collaborate in Agile/Scrum ceremonies, contributing to sprint planning, estimation, and retrospectives."
+            ]
+          }
+        ],
+        "cta": "Apply"
+      },
+      {
+        "id": "job_20251001_0003",
+        "slug": "ux-designer",
+        "title": "UX Designer",
+        "company": "Rakamin",
+        "company_logo": "/assets/rakamin.png",
+        "location": "Jakarta Selatan",
+        "type": "Full-Time",
+        "salary_range": {
+          "min": 7000000,
+          "max": 15000000,
+          "currency": "IDR",
+          "display_text": "Rp7.000.000 - Rp15.000.000"
+        },
+        "job_details": [
+          {
+            "key": "description",
+            "title": "Deskripsi Pekerjaan",
+            "items": [
+              "Develop, test, and maintain responsive, high-performance web applications using modern front-end technologies.",
+              "Collaborate with UI/UX designers to translate wireframes and prototypes into functional code.",
+              "Integrate front-end components with APIs and backend services.",
+              "Ensure cross-browser compatibility and optimize applications for maximum speed and scalability.",
+              "Write clean, reusable, and maintainable code following best practices and coding standards.",
+              "Participate in code reviews, contributing to continuous improvement and knowledge sharing.",
+              "Troubleshoot and debug issues to improve usability and overall application quality.",
+              "Stay updated with emerging front-end technologies and propose innovative solutions.",
+              "Collaborate in Agile/Scrum ceremonies, contributing to sprint planning, estimation, and retrospectives."
+            ]
+          }
+        ],
+        "cta": "Apply"
+      },
+      {
+        "id": "job_20251001_0004",
+        "slug": "ux-designer",
+        "title": "UX Designer",
+        "company": "Rakamin",
+        "company_logo": "/assets/rakamin.png",
+        "location": "Jakarta Selatan",
+        "type": "Full-Time",
+        "salary_range": {
+          "min": 7000000,
+          "max": 15000000,
+          "currency": "IDR",
+          "display_text": "Rp7.000.000 - Rp15.000.000"
+        },
+        "job_details": [
+          {
+            "key": "description",
+            "title": "Deskripsi Pekerjaan",
+            "items": [
+              "Develop, test, and maintain responsive, high-performance web applications using modern front-end technologies.",
+              "Collaborate with UI/UX designers to translate wireframes and prototypes into functional code.",
+              "Integrate front-end components with APIs and backend services.",
+              "Ensure cross-browser compatibility and optimize applications for maximum speed and scalability.",
+              "Write clean, reusable, and maintainable code following best practices and coding standards.",
+              "Participate in code reviews, contributing to continuous improvement and knowledge sharing.",
+              "Troubleshoot and debug issues to improve usability and overall application quality.",
+              "Stay updated with emerging front-end technologies and propose innovative solutions.",
+              "Collaborate in Agile/Scrum ceremonies, contributing to sprint planning, estimation, and retrospectives."
+            ]
+          }
+        ],
+        "cta": "Apply"
+      },
+      {
+        "id": "job_20251001_0005",
+        "slug": "ux-designer",
+        "title": "UX Designer",
+        "company": "Rakamin",
+        "company_logo": "/assets/rakamin.png",
+        "location": "Jakarta Selatan",
+        "type": "Full-Time",
+        "salary_range": {
+          "min": 7000000,
+          "max": 15000000,
+          "currency": "IDR",
+          "display_text": "Rp7.000.000 - Rp15.000.000"
+        },
+        "job_details": [
+          {
+            "key": "description",
+            "title": "Deskripsi Pekerjaan",
+            "items": [
+              "Develop, test, and maintain responsive, high-performance web applications using modern front-end technologies.",
+              "Collaborate with UI/UX designers to translate wireframes and prototypes into functional code.",
+              "Integrate front-end components with APIs and backend services.",
+              "Ensure cross-browser compatibility and optimize applications for maximum speed and scalability.",
+              "Write clean, reusable, and maintainable code following best practices and coding standards.",
+              "Participate in code reviews, contributing to continuous improvement and knowledge sharing.",
+              "Troubleshoot and debug issues to improve usability and overall application quality.",
+              "Stay updated with emerging front-end technologies and propose innovative solutions.",
+              "Collaborate in Agile/Scrum ceremonies, contributing to sprint planning, estimation, and retrospectives."
+            ]
+          }
+        ],
+        "cta": "Apply"
+      },
+      {
+        "id": "job_20251001_0006",
+        "slug": "frontend-developer",
+        "title": "Frontend Developer",
+        "company": "Rakamin",
+        "company_logo": "/assets/rakamin.png",
+        "location": "Jakarta Selatan",
+        "type": "Full-Time",
+        "salary_range": {
+          "min": 7000000,
+          "max": 15000000,
+          "currency": "IDR",
+          "display_text": "Rp7.000.000 - Rp15.000.000"
+        },
+        "job_details": [
+          {
+            "key": "description",
+            "title": "Deskripsi Pekerjaan",
+            "items": [
+              "Develop, test, and maintain responsive, high-performance web applications using modern front-end technologies.",
+              "Collaborate with UI/UX designers to translate wireframes and prototypes into functional code.",
+              "Integrate front-end components with APIs and backend services.",
+              "Ensure cross-browser compatibility and optimize applications for maximum speed and scalability.",
+              "Write clean, reusable, and maintainable code following best practices and coding standards.",
+              "Participate in code reviews, contributing to continuous improvement and knowledge sharing.",
+              "Troubleshoot and debug issues to improve usability and overall application quality.",
+              "Stay updated with emerging front-end technologies and propose innovative solutions.",
+              "Collaborate in Agile/Scrum ceremonies, contributing to sprint planning, estimation, and retrospectives."
+            ]
+          }
+        ],
+        "cta": "Apply"
+      }
+    ]
+  },
+  "cityOptions": [
+    { "label": "Aceh Besar", "value": "aceh_besar" },
+    { "label": "Banda Aceh", "value": "banda_aceh" },
+    { "label": "Medan", "value": "medan" },
+    { "label": "Palembang", "value": "palembang" },
+    { "label": "Jakarta", "value": "jakarta" },
+    { "label": "Bandung", "value": "bandung" },
+    { "label": "Semarang", "value": "semarang" },
+    { "label": "Surabaya", "value": "surabaya" },
+    { "label": "Denpasar", "value": "denpasar" },
+    { "label": "Makassar", "value": "makassar" },
+    { "label": "Balikpapan", "value": "balikpapan" },
+    { "label": "Manado", "value": "manado" },
+    { "label": "Jayapura", "value": "jayapura" }
+  ]
+}

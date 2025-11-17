@@ -13,7 +13,7 @@ import useMessageHelper from "@/helpers/useErrorHelper";
 import { supabase } from "@/lib/supabaseClient";
 import { countries } from "@/components/ui/input-number";
 import { useSearchParams } from "next/navigation";
-
+import jobData from "@/data/job-list.json"
 const Resume = ({ name, email, linkedin }) => {
   // Basic state
   const [cities, setCities] = useState([]);
