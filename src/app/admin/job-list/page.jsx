@@ -21,7 +21,7 @@ const JobList = () => {
   const [loadingJob, setLoadingJob] = useState(true);
   const [openCreateJob, setOpenCreateJob] = useState(false);
   const [statusFilter, setStatusFilter] = useState("all");
-  const [sortBy, setSortBy] = useState("name-asc");
+  const [sortBy, setSortBy] = useState("date-desc");
 
   const scrollRef = useRef(null);
   const [thumbHeight, setThumbHeight] = useState("20%");
@@ -133,6 +133,14 @@ const JobList = () => {
     if (sortBy === "status-desc")
       return (b.status || "").localeCompare(a.status || "");
 
+    if (sortBy === "date-desc")
+      // terbaru di atas
+      return new Date(b.created_at) - new Date(a.created_at);
+
+    if (sortBy === "date-asc")
+      // terlama di atas
+      return new Date(a.created_at) - new Date(b.created_at);
+
     return 0;
   });
 
@@ -203,14 +211,18 @@ const JobList = () => {
                 label="Sort By"
                 value={
                   {
-                    "name-asc": "Name (A → Z)",
-                    "name-desc": "Name (Z → A)",
-                    "status-asc": "Status (A → Z)",
-                    "status-desc": "Status (Z → A)",
+                    "Date (Newest → Oldest)": "Date (Newest → Oldest)",
+                    "Date (Oldest → Newest)": "Date (Oldest → Newest)",
+                    "Name (A → Z)": "Name (A → Z)",
+                    "Name (Z → A)": "Name (Z → A)",
+                    "Status (A → Z)": "Status (A → Z)",
+                    "Status (Z → A)": "Status (Z → A)",
                   }[sortBy]
                 }
                 onChange={(val) => {
                   const map = {
+                    "Date (Newest → Oldest)": "date-desc",
+                    "Date (Oldest → Newest)": "date-asc",
                     "Name (A → Z)": "name-asc",
                     "Name (Z → A)": "name-desc",
                     "Status (A → Z)": "status-asc",
@@ -219,6 +231,8 @@ const JobList = () => {
                   setSortBy(map[val]);
                 }}
                 options={[
+                  { label: "Date (Newest → Oldest)" },
+                  { label: "Date (Oldest → Newest)" },
                   { label: "Name (A → Z)" },
                   { label: "Name (Z → A)" },
                   { label: "Status (A → Z)" },

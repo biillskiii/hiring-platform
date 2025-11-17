@@ -16,6 +16,28 @@ const ModalJobAdmin = ({ status, date, title, salary, onClick }) => {
     }
   };
 
+  const formatDate = (dateString) => {
+    const dateObj = new Date(dateString);
+    const day = String(dateObj.getDate()).padStart(2, "0");
+    const monthNames = [
+      "Januari",
+      "Februari",
+      "Maret",
+      "April",
+      "Mei",
+      "Juni",
+      "Juli",
+      "Agustus",
+      "September",
+      "Oktober",
+      "November",
+      "Desember",
+    ];
+    const month = monthNames[dateObj.getMonth()]; // index bulan mulai dari 0
+    const year = dateObj.getFullYear();
+    return `${day} ${month} ${year}`;
+  };
+
   return (
     <div className="h-[156px] bg-white flex flex-col justify-center p-5 shadow-modal w-full rounded-xl">
       <div className="w-full flex items-center gap-x-4 mb-3">
@@ -24,7 +46,7 @@ const ModalJobAdmin = ({ status, date, title, salary, onClick }) => {
           variant={getStatusVariant(status)}
           className="mr-2 mb-2"
         />
-        <Chip label={date} variant="tertiary" />
+        <Chip label={formatDate(date)} variant="tertiary" />
       </div>
       <div className="flex flex-col gap-y-2">
         <h1 className="text-xl font-bold">{title}</h1>

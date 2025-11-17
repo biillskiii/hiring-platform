@@ -9,6 +9,7 @@ import SwitchGroup from "@/components/admin/switch-group";
 import Button from "@/components/ui/button";
 import { supabase } from "@/lib/supabaseClient";
 import { toast } from "react-toastify";
+
 const ModalCreateJob = ({ open, onClose, onSuccess }) => {
   const [errors, setErrors] = useState({});
 
@@ -53,7 +54,8 @@ const ModalCreateJob = ({ open, onClose, onSuccess }) => {
     if (!form.title) newErrors.title = "Job name is required";
     if (!form.company) newErrors.company = "Company name is required";
     if (!form.type) newErrors.type = "Job type is required";
-    if (!form.description) newErrors.description = "Description is required";
+    if (!form.description || form.description.length === 0)
+      newErrors.description = "Description is required";
     if (!form.candidate_needed) newErrors.candidate_needed = "Required";
     if (!form.salary_min) newErrors.salary_min = "Required";
     if (!form.salary_max) newErrors.salary_max = "Required";
@@ -66,7 +68,13 @@ const ModalCreateJob = ({ open, onClose, onSuccess }) => {
   // SUBMIT
   // -------------------
   async function handleSubmit() {
-    if (!validate()) return;
+    if (!validate()) {
+      toast.error("Please fill all required fields", {
+        position: "top-right",
+        autoClose: 3000,
+      });
+      return;
+    }
 
     const payload = {
       slug: form.title.toLowerCase().replace(/ /g, "-"),
@@ -90,7 +98,7 @@ const ModalCreateJob = ({ open, onClose, onSuccess }) => {
         {
           key: "description",
           title: "Deskripsi Pekerjaan",
-          items: form.description,
+          items: form.description.filter((d) => d.trim() !== ""),
         },
       ],
 
@@ -113,30 +121,28 @@ const ModalCreateJob = ({ open, onClose, onSuccess }) => {
     };
 
     const { error } = await supabase.from("job_details").insert(payload);
+
     if (error) {
-      console.log(error);
+      console.error("Supabase error:", error);
       toast.error("Failed to create job", {
-        style: {
-          borderRadius: "8px",
-        },
+        position: "top-right",
+        autoClose: 3000,
       });
     } else {
       toast.success("Job successfully created!", {
-        style: {
-          background: "var(--primary-main)",
-          color: "#fff",
-          borderRadius: "8px",
-        },
+        position: "top-right",
+        autoClose: 3000,
       });
 
       setForm(initialForm);
+      setErrors({});
       onClose();
       if (onSuccess) onSuccess();
     }
   }
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center z-9999">
+    <div className="fixed inset-0 flex items-center justify-center z-50">
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/40" onClick={onClose}></div>
 
