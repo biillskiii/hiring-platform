@@ -52,7 +52,7 @@ const JobList = () => {
   useEffect(() => {
     fetchJobs();
 
-    // FIXED REALTIME
+    // Realtime update
     const channel = supabase
       .channel("job_details_changes")
       .on(
@@ -85,7 +85,7 @@ const JobList = () => {
     };
   }, []);
 
-  // SCROLLBAR LOGIC
+  // Scrollbar logic
   const handleScroll = () => {
     const el = scrollRef.current;
     if (!el) return;
@@ -104,6 +104,7 @@ const JobList = () => {
     setThumbTop(`${scrollPercent * maxThumbTop}%`);
   };
 
+  // FILTERS & SORTING
   let filteredJobs = [...jobs];
 
   // FILTER STATUS
@@ -113,15 +114,18 @@ const JobList = () => {
     );
   }
 
-  // FILTER SEARCH
+  // FILTER SEARCH - FIXED (job.title bisa null)
   filteredJobs = filteredJobs.filter((job) =>
-    job.title.toLowerCase().includes(query.toLowerCase())
+    (job.title || "").toLowerCase().includes(query.toLowerCase())
   );
 
-  // SORTING
+  // SORTING - FIXED (title dan status bisa null)
   filteredJobs.sort((a, b) => {
-    if (sortBy === "name-asc") return a.title.localeCompare(b.title);
-    if (sortBy === "name-desc") return b.title.localeCompare(a.title);
+    if (sortBy === "name-asc")
+      return (a.title || "").localeCompare(b.title || "");
+
+    if (sortBy === "name-desc")
+      return (b.title || "").localeCompare(a.title || "");
 
     if (sortBy === "status-asc")
       return (a.status || "").localeCompare(b.status || "");
@@ -136,6 +140,7 @@ const JobList = () => {
     router.push(`/admin/job-list/${jobId}/manage-candidate`);
   };
 
+  // Loading
   if (loading || loadingJob) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -151,9 +156,9 @@ const JobList = () => {
       <Navbar avatar={Avatar} />
 
       <div className="flex-1 flex flex-col lg:flex-row items-start justify-start pt-6 sm:pt-8 lg:pt-10 px-4 sm:px-6 lg:px-10 gap-6 lg:gap-10 overflow-hidden">
-        {/* LEFT SIDE - Job List */}
+        {/* LEFT SIDE */}
         <div className="flex flex-col w-full lg:flex-1">
-          {/* Search & Filters */}
+          {/* Search + Filters */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
             <div className="flex-1 min-w-0">
               <SearchInput
@@ -223,7 +228,7 @@ const JobList = () => {
             </div>
           </div>
 
-          {/* SCROLL AREA */}
+          {/* Job List */}
           <div className="relative mt-4 sm:mt-6 w-full h-[calc(100vh-280px)] sm:h-[calc(100vh-240px)] lg:h-[70vh]">
             <div
               ref={scrollRef}
@@ -258,8 +263,8 @@ const JobList = () => {
                       key={job.id}
                       date={job.created_at}
                       salary={job.salary_range?.display_text}
-                      title={job.title}
-                      status={job.status}
+                      title={job.title || "-"}
+                      status={job.status || "Unknown"}
                       onClick={() => handleManageCandidateClick(job.id)}
                     />
                   ))
@@ -267,7 +272,7 @@ const JobList = () => {
               </div>
             </div>
 
-            {/* CUSTOM SCROLLBAR - Desktop only */}
+            {/* custom scrollbar */}
             <div className="hidden lg:block absolute -top-16 -right-[360px] w-2.5 h-[80vh] bg-neutral-200 rounded-full">
               <div
                 style={{ height: thumbHeight, top: thumbTop }}
@@ -277,11 +282,11 @@ const JobList = () => {
           </div>
         </div>
 
-        {/* RIGHT SIDE - CTA Card - Desktop & Tablet only */}
+        {/* RIGHT SIDE */}
         <div className="hidden md:flex relative flex-col w-full md:w-80 lg:w-[300px] shrink-0">
           <div
             className="relative w-full h-40 sm:h-44 lg:h-[168px] p-5 sm:p-6 rounded-2xl overflow-hidden shadow-lg 
-             text-neutral-20 flex flex-col justify-center items-start bg-cover bg-center"
+            text-neutral-20 flex flex-col justify-center items-start bg-cover bg-center"
             style={{ backgroundImage: "url('/assets/bg-modal.jpg')" }}
           >
             <div className="absolute inset-0 bg-black/60"></div>
@@ -305,7 +310,7 @@ const JobList = () => {
           </div>
         </div>
 
-        {/* Floating Action Button - Mobile only */}
+        {/* FAB Mobile */}
         <div className="rounded-full shadow-lg flex items-center justify-center z-50 active:scale-95 transition-transform md:hidden fixed bottom-6 right-6 w-14 h-14">
           <Button
             onClick={() => setOpenCreateJob(true)}
@@ -314,7 +319,6 @@ const JobList = () => {
         </div>
       </div>
 
-      {/* CREATE JOB MODAL */}
       <ModalCreateJob
         open={openCreateJob}
         onClose={() => setOpenCreateJob(false)}

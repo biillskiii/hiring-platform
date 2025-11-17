@@ -15,7 +15,7 @@ const ModalCreateJob = ({ open, onClose, onSuccess }) => {
   const initialForm = {
     title: "",
     company: "",
-    company_logo: "", // sekarang URL saja
+    company_logo: "",
     location: "",
     type: "",
     description: [],
@@ -31,6 +31,7 @@ const ModalCreateJob = ({ open, onClose, onSuccess }) => {
     linkedin_status: "Mandatory",
     dob_status: "Mandatory",
     cta: "Apply",
+    status: "Active",
   };
 
   const [form, setForm] = useState(initialForm);
@@ -89,7 +90,7 @@ const ModalCreateJob = ({ open, onClose, onSuccess }) => {
         {
           key: "description",
           title: "Deskripsi Pekerjaan",
-          items: form.description, // ARRAY, bukan string
+          items: form.description,
         },
       ],
 
