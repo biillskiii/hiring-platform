@@ -31,7 +31,7 @@ const ModalCreateJob = ({ open, onClose, onSuccess }) => {
     linkedin_status: "Mandatory",
     dob_status: "Mandatory",
     cta: "Apply",
-    status: "Active",
+    status: "active",
   };
 
   const [form, setForm] = useState(initialForm);
@@ -105,10 +105,11 @@ const ModalCreateJob = ({ open, onClose, onSuccess }) => {
         dob_status: form.dob_status,
       },
 
-      cta: form.cta || null,
+      cta: form.cta,
       created_at: new Date().toISOString(),
       position_type: form.type,
       min_candidate: Number(form.candidate_needed),
+      status: form.status,
     };
 
     const { error } = await supabase.from("job_details").insert(payload);
