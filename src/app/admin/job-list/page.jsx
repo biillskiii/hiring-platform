@@ -14,6 +14,7 @@ import Dropdown from "@/components/ui/dropdown";
 import EmptyState from "../../../../public/assets/empty-state.svg";
 import Image from "next/image";
 import { PlusIcon } from "@heroicons/react/24/outline";
+import { ToastContainer } from "react-toastify";
 
 const JobList = () => {
   const [query, setQuery] = useState("");
@@ -340,6 +341,7 @@ const JobList = () => {
         setForm={setForm}
         onSuccess={fetchJobs}
       />
+      <ToastContainer position="bottom-left" />
     </div>
   );
 };
